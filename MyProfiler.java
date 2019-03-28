@@ -41,12 +41,9 @@ public class MyProfiler<K extends Comparable<K>, V> {
 	public void retrieve(K key) {
 		try {
 			hashtable.get(key);
-		} catch (IllegalNullKeyException e) {
-			e.printStackTrace();
-		} catch (KeyNotFoundException e) {
-			e.printStackTrace();
+			treemap.get(key);
+		} catch (Exception e) {
 		}
-		treemap.get(key);
 	}
 
 	public static void main(String[] args) {
@@ -54,8 +51,8 @@ public class MyProfiler<K extends Comparable<K>, V> {
 			int numElements = Integer.parseInt(args[0]);
 			MyProfiler<Integer, Integer> profile = new MyProfiler<Integer,Integer>();
 			for (int i = 0; i < numElements; i++) {
-				profile.insert((Integer)i, 1);
-				profile.retrieve((Integer)i);
+				profile.insert(i, i);
+				profile.retrieve(i);
 			}
 			String msg = String.format("Inserted and retreived %d (key,value) pairs", numElements);
 			System.out.println(msg);
