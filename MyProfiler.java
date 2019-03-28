@@ -18,12 +18,11 @@
 import java.util.TreeMap;
 
 public class MyProfiler<K extends Comparable<K>, V> {
-
-	HashTableADT<K, V> hashtable;
+	HashTable<K, V> hashtable;
 	TreeMap<K, V> treemap;
 
 	public MyProfiler() {
-		HashTableADT<Integer,Integer> hashtable = new HashTable<Integer,Integer>();
+		HashTable<Integer,Integer> hashtable = new HashTable<Integer,Integer>();
 		TreeMap<Integer,Integer> treemap = new TreeMap<Integer,Integer>();
 	}
 
