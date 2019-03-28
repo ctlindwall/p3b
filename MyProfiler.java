@@ -22,8 +22,9 @@ public class MyProfiler<K extends Comparable<K>, V> {
 	TreeMap<K, V> treemap;
 
 	public MyProfiler() {
-		HashTable<Integer,Integer> hashtable = new HashTable<Integer,Integer>();
-		TreeMap<Integer,Integer> treemap = new TreeMap<Integer,Integer>();
+		this.hashtable = new HashTable<K, V>();
+		this.treemap = new TreeMap<K,V>();
+		
 	}
 
 	public void insert(K key, V value) {
@@ -53,8 +54,8 @@ public class MyProfiler<K extends Comparable<K>, V> {
 			int numElements = Integer.parseInt(args[0]);
 			MyProfiler<Integer, Integer> profile = new MyProfiler<Integer,Integer>();
 			for (int i = 0; i < numElements; i++) {
-				profile.insert(i, i);
-				profile.retrieve(i);
+				profile.insert((Integer)i, 1);
+				profile.retrieve((Integer)i);
 			}
 			String msg = String.format("Inserted and retreived %d (key,value) pairs", numElements);
 			System.out.println(msg);
