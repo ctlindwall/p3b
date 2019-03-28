@@ -22,7 +22,7 @@ public class MyProfiler<K extends Comparable<K>, V> {
 	TreeMap<K, V> treemap;
 
 	public MyProfiler() {
-		this.hashtable = new HashTable<K, V>();
+		this.hashtable = new HashTable();
 		this.treemap = new TreeMap<K,V>();
 		
 	}
